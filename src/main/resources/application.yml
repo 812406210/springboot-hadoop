@@ -1,0 +1,38 @@
+spring:
+  profiles:
+    active: @activatedProperties@
+  main:
+    show-banner: false
+hadoop.name-node: hdfs://132.232.44.82:9000
+hadoop.namespace: /mydata
+#  hadoop:
+#    fsUri: hdfs://132.232.44.82:9000
+
+#端口
+server:
+  port: 8080
+
+#log日志
+logging:
+  level:
+    com:
+      hadoop:
+        demo:
+          dao: debug
+#mybatis-plus
+mybatis-plus:
+  　　typeAliasesPackage: com.hadoop.demo.entity
+  　　mapperLocations: classpath:mapper/*.xml
+
+---
+#开发配置
+spring:
+  profiles: dev
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=GMT%2B8
+    #url: jdbc:mysql://localhost:3306/test
+    username: root
+    password: yang156122
+    driver-class-name: com.mysql.jdbc.Driver
+    # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
