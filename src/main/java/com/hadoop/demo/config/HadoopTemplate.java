@@ -12,11 +12,7 @@ import org.springframework.stereotype.Component;
 import javax.annotation.PostConstruct;
 import java.io.IOException;
 
-/**
- * @Author: ynz
- * @Date: 2019/1/28/028 13:29
- * @Version 1.0
- */
+
 @Component
 @ConditionalOnBean(FileSystem.class)
 @Slf4j
