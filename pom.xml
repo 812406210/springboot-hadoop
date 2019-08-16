@@ -147,17 +147,6 @@
             <artifactId>hbase-client</artifactId>
             <version>1.3.0</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.data</groupId>-->
-<!--            <artifactId>spring-data-hadoop</artifactId>-->
-<!--            <exclusions>-->
-<!--                <exclusion>-->
-<!--                    <groupId>javax.servlet</groupId>-->
-<!--                    <artifactId>*</artifactId>-->
-<!--                </exclusion>-->
-<!--            </exclusions>-->
-<!--        </dependency>-->
-
         <!-- https://mvnrepository.com/artifact/com.yammer.metrics/metrics-core -->
         <dependency>
             <groupId>com.yammer.metrics</groupId>
