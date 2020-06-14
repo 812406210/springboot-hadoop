@@ -2,8 +2,11 @@ package com.hadoop.demo.controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
+import java.util.Optional;
 
+import com.hadoop.demo.entity.User;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.hbase.HBaseConfiguration;
 import org.apache.hadoop.hbase.HColumnDescriptor;
@@ -17,28 +20,34 @@ import org.apache.hadoop.hbase.filter.FilterList;
 import org.apache.hadoop.hbase.filter.SingleColumnValueFilter;
 import org.apache.hadoop.hbase.filter.CompareFilter.CompareOp;
 import org.apache.hadoop.hbase.util.Bytes;
+import org.springframework.stereotype.Component;
 
+@Component
 public class HbaseTest {
 
     public static Configuration configuration;
     static {
         System.setProperty("hadoop.home.dir", "D:\\software\\hadoop-dev\\hadoop-2.7.7");
         configuration = HBaseConfiguration.create();
-        configuration.set("hbase.zookeeper.property.clientPort", "2181");
+        configuration.set("hbase.zookeeper.property.clientP ort", "2181");
         configuration.set("hbase.zookeeper.quorum", "medecineit");
-        configuration.set("hbase.master", "medecineit:16020");
+       // configuration.set("hbase.master", "medecineit:16020");
     }
 
     public static void main(String[] args) {
+       try { }catch (Exception e){
+           e.printStackTrace();
+       }
 
-         //createTable("wujintao");
+         //createTable("yang1");
         //insertData("wujintao");
-         QueryAll("wujintao");
+         //QueryAll("wujintao");
         // QueryByCondition1("wujintao");
         // QueryByCondition2("wujintao");
         //QueryByCondition3("wujintao");
         //deleteRow("wujintao","abcdef");
        // deleteByCondition("wujintao","abcdef");
+
     }
 
 

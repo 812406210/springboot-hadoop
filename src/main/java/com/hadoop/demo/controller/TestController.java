@@ -5,6 +5,7 @@ import com.hadoop.demo.entity.User;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
+import java.util.Optional;
 
 @RestController
 public class TestController {
@@ -18,6 +19,7 @@ public class TestController {
 
     @RequestMapping("testUser")
     public User testUser(){
+
         User user = userDao.selectById(1);
         return user;
     }
