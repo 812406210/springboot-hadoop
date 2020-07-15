@@ -40,8 +40,8 @@ public class WordCountWindows {
         job.setOutputValueClass(IntWritable.class);
 
         job.setPartitionerClass(WordCountPartition.class);
-        FileInputFormat.setInputPaths(job, new Path("d:/mydata/wordcount/{input/*}"));
-        FileOutputFormat.setOutputPath(job, new Path("d:/mydata/wordcount/output"));
+        FileInputFormat.setInputPaths(job, new Path("F:/hadoop_data/wordcount/{input/*}"));
+        FileOutputFormat.setOutputPath(job, new Path("F:/hadoop_data/wordcount/output"));
 
         job.setNumReduceTasks(3);
 

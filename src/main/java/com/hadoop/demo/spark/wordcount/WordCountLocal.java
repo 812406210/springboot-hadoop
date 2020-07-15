@@ -1,4 +1,4 @@
-package com.hadoop.demo.spark;
+package com.hadoop.demo.spark.wordcount;
 
 import org.apache.spark.SparkConf;
 import org.apache.spark.api.java.JavaPairRDD;
@@ -16,13 +16,13 @@ import java.util.Iterator;
  * @author yangwj
  * @date 2020/6/15 20:53
  */
-public class WordCount {
+public class WordCountLocal {
 
     public static void main(String[] args) {
         SparkConf conf  =new SparkConf().setAppName("JavaWorldCount").setMaster("local");
         JavaSparkContext jsc = new JavaSparkContext(conf);
         //读取数据
-        JavaRDD<String> lines = jsc.textFile("D:\\1.txt");
+        JavaRDD<String> lines = jsc.textFile("F:\\spart_data\\wordcount\\input\\1.txt");
         //扁平化
         JavaRDD<String> words = lines.flatMap(new FlatMapFunction<String, String>() {
             @Override
@@ -67,7 +67,7 @@ public class WordCount {
         });
 
         //保存数据
-        result.saveAsTextFile("D:\\out.txt");
+        result.saveAsTextFile("F:\\spart_data\\wordcount\\output\\out.txt");
 
         jsc.stop();
 
